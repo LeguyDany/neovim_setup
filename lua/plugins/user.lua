@@ -87,14 +87,6 @@ return {
   },
 
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function() vim.cmd "colorscheme tokyonight-night" end,
-  },
-
-  {
     "Exafunction/windsurf.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -122,5 +114,13 @@ return {
     keys = {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
+  },
+
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function() vim.cmd "colorscheme tokyonight-night" end,
   },
 }

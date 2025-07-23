@@ -13,9 +13,13 @@ return {
       ensure_installed = {
         -- install language servers
         "lua-language-server",
+        "python-lsp-server",
+        "eslint-lsp",
 
         -- install formatters
         "stylua",
+        "prettierd", -- JS / TS
+        "black", -- python
 
         -- install debuggers
         "debugpy",
@@ -25,7 +29,18 @@ return {
       },
     },
   },
-    {"williamboman/mason.nvim"},
-    {"mfussenegger/nvim-dap"},
-    {"jay-babu/mason-nvim-dap.nvim"},
+  { "williamboman/mason.nvim" },
+  {
+    "mfussenegger/nvim-dap",
+    lazy = true,
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+    },
+    keys = {
+      { "<leader>d", function() require("dap").toggle_breakpoint() end },
+      { "<leader>c", function() require("dap").continue() end },
+    },
+    config = function() require("dapui").setup() end,
+  },
+  { "jay-babu/mason-nvim-dap.nvim" },
 }
