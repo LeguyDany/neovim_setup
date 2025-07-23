@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -76,6 +76,13 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
+
+        ["<Leader>zj"] = {
+          "<cmd>normal! 16jzz<CR>", desc = "Goes down then center"
+        },
+        ["<Leader>zk"] = {
+          "<cmd>normal! 16kzz<CR>", desc = "Goes up then center"
+        },
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
