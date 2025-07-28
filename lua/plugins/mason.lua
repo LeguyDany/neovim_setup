@@ -15,14 +15,17 @@ return {
         "lua-language-server",
         "python-lsp-server",
         "eslint-lsp",
+        "gopls",
 
         -- install formatters
         "stylua",
         "prettierd", -- JS / TS
         "black", -- python
+        "golines", -- Golang
 
         -- install debuggers
-        "debugpy",
+        "debugpy", -- Python
+        "delve", -- Golang
 
         -- install any other package
         "tree-sitter-cli",
