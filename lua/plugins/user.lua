@@ -92,7 +92,28 @@ return {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
-    config = function() require("codeium").setup {} end,
+    config = function()
+      require("codeium").setup {
+        -- Optional: enable virtual text suggestions
+        virtual_text = {
+          enabled = true,
+          idle_delay = 100,
+          map_keys = true,
+        },
+      }
+
+      -- Inject Codeium as a cmp source
+      local cmp = require "cmp"
+      cmp.setup {
+        sources = cmp.config.sources({
+          { name = "codeium" },
+        }, {
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+          { name = "path" },
+        }),
+      }
+    end,
   },
 
   {
